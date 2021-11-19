@@ -47,6 +47,19 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/date"
+            android:justificationMode="inter_word"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/black_400"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/rakingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/rating"
+            android:textAlignment="center"
             android:fontFamily="sans-serif-light"
             android:textColor="@color/black_400"
             tools:ignore="TextContrastCheck" />
