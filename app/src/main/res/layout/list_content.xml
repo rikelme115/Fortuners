@@ -36,7 +36,8 @@
             android:id="@+id/nameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
+            android:textSize="27sp"
+            android:textAlignment="center"
             android:textColor="@color/black_900"
             android:text="@string/name" />
 
@@ -49,7 +50,7 @@
             android:text="@string/date"
             android:justificationMode="inter_word"
             android:fontFamily="sans-serif-light"
-            android:textColor="@color/black_400"
+            android:textColor="@color/black_700"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -61,7 +62,7 @@
             android:text="@string/rating"
             android:textAlignment="center"
             android:fontFamily="sans-serif-light"
-            android:textColor="@color/black_400"
+            android:textColor="@color/black_700"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
