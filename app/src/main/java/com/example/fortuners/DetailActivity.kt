@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import android.view.WindowInsetsController
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
 
         val name: TextView = findViewById(R.id.nameTextView)
         val description: TextView = findViewById(R.id.descriptionTextView)
@@ -24,4 +24,7 @@ class DetailActivity : AppCompatActivity() {
             .load(intent.getStringExtra("url"))
             .into(poster)
     }
+
+
+
 }
