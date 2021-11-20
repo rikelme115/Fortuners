@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
+                android:textAlignment="center"
                 android:textColor="@color/black_900"
                 android:textSize="24sp"
                 tools:ignore="TextContrastCheck" />
@@ -37,7 +38,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/subtitle"
+                android:textAlignment="center"
                 android:textColor="@color/black_700"
                 android:textSize="16sp"
                 tools:ignore="TextContrastCheck" />

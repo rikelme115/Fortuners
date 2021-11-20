@@ -48,6 +48,21 @@
             android:textColor="@color/black_900"
             android:textSize="24sp" />
 
+        <TextView
+            android:id="@+id/ubicacionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ubicacion"
+            android:textColor="@color/black_900"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temperatura"
+            android:textColor="@color/black_900"
+            android:textSize="20sp" />
+
 
 
         <LinearLayout
