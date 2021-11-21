@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import android.view.WindowInsetsController
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

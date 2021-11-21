@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class PointViewAdapter(private val values: List<Point>) : RecyclerView.Adapter<PointViewAdapter.ViewHolder>() {
+class PoiViewAdapter(private val values: List<Poi>) : RecyclerView.Adapter<PoiViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
