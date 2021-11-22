@@ -6,15 +6,11 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
-import org.json.JSONObject
 import java.io.IOException
-import java.nio.Buffer
 
 
 
 class MainActivity : AppCompatActivity() {
-
-    //val listaPoi:MutableList<Poi> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             val buffer = ByteArray(size)
             stream.read(buffer)
             stream.close()
-            var tContents = String(buffer)
+            val tContents = String(buffer)
             val jsonArray = JSONArray(tContents)
 
             for (i in 0 until jsonArray.length()){
