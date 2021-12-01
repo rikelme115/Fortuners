@@ -1,40 +1,56 @@
 package com.example.fortuners
 
 
-import androidx.appcompat.app.AppCompatActivity
+
+
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
 import java.io.IOException
 
 
+class RecyclerFragment : Fragment() {
 
-class MainActivity : AppCompatActivity() {
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-
-
-        /*val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        setupRecyclerView(recyclerView)*/
     }
 
-    /*private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = PoiViewAdapter(loadData())
-    }*/
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_recycler, container, false)
+    }
 
-    /*private fun loadData(): MutableList<Poi>{
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        setupRecyclerView(recyclerView)
+    }
+
+    private fun setupRecyclerView(recyclerView: RecyclerView) {
+        recyclerView.adapter = PoiViewAdapter(loadData())
+    }
+
+    private fun loadData(): MutableList<Poi>{
         val listaPoi:MutableList<Poi> = mutableListOf()
         try{
-            val stream = assets.open("poi.json")
+
+            val stream = requireContext().assets.open("poi.json")
             val size = stream.available()
             val buffer = ByteArray(size)
             stream.read(buffer)
@@ -58,7 +74,6 @@ class MainActivity : AppCompatActivity() {
 
         }
         return listaPoi
-    }*/
+    }
 
-
-}
+    }
