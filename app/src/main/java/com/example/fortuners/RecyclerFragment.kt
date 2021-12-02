@@ -43,7 +43,8 @@ class RecyclerFragment : Fragment(), View.OnClickListener {
 
         /*navController = findNavController(view)*/
 
-        binding.btnPlus.setOnClickListener(this)
+        //binding.btnPlus.setOnClickListener(this)
+        binding.floatingActionButton2.setOnClickListener(this)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
@@ -85,6 +86,7 @@ class RecyclerFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) =
-        binding.btnPlus.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
+        //binding.btnPlus.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
+        binding.floatingActionButton2.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
 
 }
