@@ -4,7 +4,10 @@ package com.example.fortuners
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
@@ -12,7 +15,8 @@ import java.io.IOException
 
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
+
 
 
 

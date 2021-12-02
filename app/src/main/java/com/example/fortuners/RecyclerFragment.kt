@@ -3,21 +3,30 @@ package com.example.fortuners
 
 
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fortuners.databinding.FragmentRecyclerBinding
 import org.json.JSONArray
 import java.io.IOException
 
 
-class RecyclerFragment : Fragment() {
+class RecyclerFragment : Fragment(), View.OnClickListener {
 
+    private var _binding: FragmentRecyclerBinding? = null
+    private val binding get() = _binding!!
 
-
+    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +38,17 @@ class RecyclerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recycler, container, false)
+        _binding = FragmentRecyclerBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = findNavController(view)
+
+        binding.btnPlus.setOnClickListener(this)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
@@ -76,4 +89,7 @@ class RecyclerFragment : Fragment() {
         return listaPoi
     }
 
-    }
+    override fun onClick(v: View?) =
+        binding.btnPlus.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
+
+}
