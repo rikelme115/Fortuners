@@ -58,7 +58,6 @@ class RecyclerFragment : Fragment(), View.OnClickListener {
     private fun loadData(): MutableList<Poi>{
         val listaPoi:MutableList<Poi> = mutableListOf()
         try{
-
             val stream = requireContext().assets.open("poi.json")
             val size = stream.available()
             val buffer = ByteArray(size)
@@ -80,13 +79,9 @@ class RecyclerFragment : Fragment(), View.OnClickListener {
                 listaPoi.add(Poi(id,name, date, description, ubicacion, temperatura, puntuacion, url))
             }
         }catch (e: IOException){
-
         }
         return listaPoi
     }
-
     override fun onClick(v: View?) =
-        //binding.btnPlus.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
         binding.floatingActionButton2.findNavController().navigate(R.id.action_recyclerFragment_to_settingsFragment)
-
 }
