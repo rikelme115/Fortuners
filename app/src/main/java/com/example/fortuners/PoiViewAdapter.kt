@@ -8,11 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.fortuners.databinding.ListContentBinding
-
-class PoiViewAdapter(private val values: List<Poi>) : RecyclerView.Adapter<PoiViewAdapter.ViewHolder>() {
-
-
+import com.example.fortuners.models.MyDataItem
+class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapter<PoiViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
