@@ -4,11 +4,17 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fortuners.models.MyDataItem
+import android.os.Bundle
+
+
+
 class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapter<PoiViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,6 +35,8 @@ class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapte
                 .load(poi.url)
                 .into(it)
         }
+
+        /*val datosAEnviar = Bundle()*/
         //holder.itemView.setOnClickListener { v ->
         holder.posterImageView.setOnClickListener { v ->
             val intent = Intent(v.context, DetailActivity::class.java).apply {
@@ -41,6 +49,13 @@ class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapte
             }
             v.context.startActivity(intent)
         }
+
+        /*holder.ubicacionMaps.setOnClickListener{v ->
+            holder.ubicacionMaps.findNavController().navigate(R.id.action_recyclerFragment_to_mapsFragment)
+        }*/
+
+        //holder.ubicacionMaps.findNavController().navigate(R.id.action_recyclerFragment_to_mapsFragment)
+
     }
 
     override fun getItemCount() = values.size
@@ -50,6 +65,7 @@ class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapte
         val nameTextView: TextView = view.findViewById(R.id.nameTextView)
         val dateTextView: TextView = view.findViewById(R.id.dateTextView)
         val posterImageView: ImageView = view.findViewById(R.id.posterImageView)
-        val rakingTextView: TextView = view.findViewById((R.id.rakingTextView))
+        val rakingTextView: TextView = view.findViewById(R.id.rakingTextView)
+        /*val ubicacionMaps : Button = view.findViewById(R.id.fragmentMap)*/
     }
 }
