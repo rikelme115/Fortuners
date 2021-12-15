@@ -50,11 +50,6 @@ class PoiViewAdapter(private val values: List<MyDataItem>) : RecyclerView.Adapte
             v.context.startActivity(intent)
         }
 
-        /*holder.ubicacionMaps.setOnClickListener{v ->
-            holder.ubicacionMaps.findNavController().navigate(R.id.action_recyclerFragment_to_mapsFragment)
-        }*/
-
-        //holder.ubicacionMaps.findNavController().navigate(R.id.action_recyclerFragment_to_mapsFragment)
 
     }
 

@@ -3,6 +3,7 @@ package com.example.fortuners
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fortuners.databinding.ActivityMapsPoiBinding
+
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -13,19 +14,24 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsPoi : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding : ActivityMapsPoiBinding
+    private lateinit var binding: ActivityMapsPoiBinding
 
-    val latitud: Double = -34.0
-    val longitud: Double = 151.0
+    private var latitud1 : Double? = 0.0
+    private var longitud1 : Double? = 0.0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
         binding = ActivityMapsPoiBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /*var latitud = intent.getStringExtra("lat")
+        var longitud= intent.getStringExtra("lon")
+
+        latitud1 = latitud?.toDouble()
+        longitud1 = longitud?.toDouble()*/
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -43,11 +49,24 @@ class MapsPoi : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
+
+        /*val intent = this.intent
+        val extra = intent.extras*/
+
+
+
+        /*var lat : Double = latitud1!!
+        var lon :  Double = longitud1!!*/
+
+        /*var latitud = -34.0//extra!!.getDouble("latitud")
+        var longitud = 151.0//extra!!.getDouble("longitud")*/
+
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val ubicacion = LatLng(latitud, longitud)
-        mMap.addMarker(MarkerOptions().position(ubicacion).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(ubicacion))
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
+
